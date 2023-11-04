@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인 페이지</title>
+    <style>
+        body{background-image: url('../static/img/main_back.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-attachment: fixed;
+        }
+
+        .img1{position: absolute; left: 400px; top: 500px; opacity: 0;}
+        .img2{position: absolute; right: 400px; top: 500px; opacity: 0;}
+
+    </style>
+</head>
+<body>
+    <a href="https://www.diabetes.or.kr/general/dietary/dietary_03.php" target="_blank">
+    <img class="img1" src="../static/img/click_test.jpg">
+    </a>
+
+    <a href="{{url_for('sub')}}" target="_blank"><img class="img2" src="../static/img/click_test.jpg"></a>
+    
+    
+</body>
+</html>
+
+

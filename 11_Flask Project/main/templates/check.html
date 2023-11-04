@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력값 확인 페이지</title>
+
+    <style>
+        @font-face {
+            font-family: 'MapleStory';
+            src: url('/static/Maplestory Bold.ttf');}
+    
+        body{background-image: url('../static/img/check_back.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-position-y: 20px;
+        height: 100vh;
+        overflow: hidden;
+        background-attachment: fixed;
+        font-family: 'MapleStory';}
+        
+        header{background-color: transparent; padding: 20px;}
+
+        .main_title{text-align: center; color: rgba(107, 29, 29, 0.799); font-family: 'MapleStory'; font-size: 50px;}
+        a{text-decoration: none; color: inherit;}
+        .center{position: absolute; left: 550px; top: 220px;}
+        table{text-align: center;}
+        
+    </style>
+</head>
+<header>
+    <a href="/"><h1 class="main_title">메인화면</h1></a>
+</header>
+
+<body>
+    <div style="width: 800px;" class="center">
+    <h2 style="font-size: 35px;">검색기록</h2>
+    {% if user_list %}
+        <Table width="600" height="150">
+            <tr bgcolor='lightgray'>
+                <td>인덱스</td>
+                <td>식품명</td>
+                <td>수분</td>
+                <td>단백질</td>
+                <td>지질</td>
+                <td>탄수화물</td>
+                <td>식품군</td>
+            </tr>
+        {% for user in user_list %}
+            <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.Food }}</td>
+            <td>{{ user.Water }}</td>
+            <td>{{ user.Protein }} </td>
+            <td>{{ user.Fat }} </td>
+            <td>{{ user.Carbohydrate }} </td>
+            <td>{{user.Result}}</td>
+            </tr>
+
+        {% endfor %}
+        </Table>
+    {% else %}
+        <p><font color='red'>검색기록이 없어요</font></p> 
+    {% endif %}
+    </div>
+</body>
+</html>
